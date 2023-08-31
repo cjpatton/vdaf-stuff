@@ -1,0 +1,9 @@
+[package]
+name = "vdaf-stuff-tool"
+edition = "2021"
+version = "0.0.1"
+
+[dependencies]
+plotpy.workspace = true
+prio.workspace = true
+vdaf-stuff = { path = ".." }

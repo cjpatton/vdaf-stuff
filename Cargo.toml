@@ -1,7 +1,16 @@
+[workspace]
+members = [".", "tool"]
+
+[workspace.dependencies]
+plotpy = "0.4.2"
+prio = { git = "https://github.com/divviup/libprio-rs", branch = "main", features = ["experimental"] }
+rand = "0.8.5"
+
 [package]
-name = "fun-with-differential-privacy"
-version = "0.1.0"
+name = "vdaf-stuff"
 edition = "2021"
+version = "0.0.1"
 
 [dependencies]
-prio = { git = "https://github.com/divviup/libprio-rs", branch = "main" }
+prio.workspace = true
+rand.workspace = true
