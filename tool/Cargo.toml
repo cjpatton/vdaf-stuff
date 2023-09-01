@@ -6,4 +6,5 @@ version = "0.0.1"
 [dependencies]
 plotpy.workspace = true
 prio.workspace = true
+rand.workspace = true
 vdaf-stuff = { path = ".." }

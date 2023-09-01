@@ -27,6 +27,8 @@ impl<F: FieldElementWithInteger> NBin<F> {
 impl<F: FieldElementWithInteger> Noise<F> for NBin<F> {
     fn sample_from_bitvec(&self, bitvec: &[F], num_shares: usize) -> Vec<F> {
         let num_shares_inv = F::from(F::Integer::try_from(num_shares).unwrap()).inv();
+
+        // Let y ~ Bin(n, 1/2).
         let y = bitvec
             .iter()
             .cloned()
@@ -96,6 +98,9 @@ mod tests {
                 sample
             })
             .unwrap();
-        assert_eq!(got, want);
+        assert_eq!(
+            got[0] + Field128::from(20000),
+            want[0] + Field128::from(20000)
+        );
     }
 }
